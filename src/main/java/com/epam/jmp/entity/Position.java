@@ -1,0 +1,11 @@
+package com.epam.jmp.entity;
+
+public enum Position {
+    TESTING_ENGINEER,
+    SOFTWARE_ENGINEER,
+    SYSTEMS_ENGINEER,
+    BUSINESS_ANALYST,
+    TESTING_MANAGER,
+    SOFTWARE_MANAGER,
+    SYSTEMS_MANAGER;
+}
