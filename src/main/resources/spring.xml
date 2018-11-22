@@ -5,35 +5,26 @@
  		http://www.springframework.org/schema/beans
  		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <bean id="employee" class="com.epam.jmp.entity.Employee" scope="prototype">
+    <bean id="employee" class="com.epam.jmp.entity.Employee" scope="prototype"/>
 
-    </bean>
+    <bean id="position" class="com.epam.jmp.entity.Position" scope="prototype"/>
 
-    <bean id="position" class="com.epam.jmp.entity.Position" scope="prototype">
+    <bean id="salary" class="com.epam.jmp.entity.Salary" scope="prototype"/>
 
-    </bean>
+    <import resource="lists.xml"/>
 
-    <bean id="salary" class="com.epam.jmp.entity.Salary" scope="prototype">
-
-    </bean>
-
-    <bean id="employeeService" class="com.epam.jmp.service.EmployeeService" scope="singleton">
+    <bean id="employeeService" class="com.epam.jmp.service.EmployeeService" scope="singleton" autowire="byName">
         <constructor-arg ref="positionService"/>
         <constructor-arg ref="salaryService"/>
         <constructor-arg ref="staff"/>
+        <constructor-arg ref="randomYear"/>
     </bean>
 
     <bean id="positionService" class="com.epam.jmp.service.PositionService" scope="singleton">
         <constructor-arg ref="positionsList"/>
     </bean>
 
-    <bean id="staff" class="com.epam.jmp.staff.Staff" scope="singleton" autowire="byType">
-    </bean>
-
-    <bean id="positionsList" class="com.epam.jmp.department.PositionList" scope="singleton"/>
-
     <bean id="salaryService" class="com.epam.jmp.service.SalaryService" scope="singleton" autowire="byName"/>
 
-    <bean id="salarySheet" class="com.epam.jmp.salarySheet.SalarySheet" scope="singleton"/>
-
+    <bean id="randomYear" class="com.epam.jmp.util.RandomYear" scope="singleton"/>
 </beans>

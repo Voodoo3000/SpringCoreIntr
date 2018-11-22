@@ -4,7 +4,7 @@ public class Employee {
     private String firstName;
     private Position position;
     private Salary salary;
-    private Integer yearsOfWorkExperience;
+    private int yearOfEmployment;
 
     public String getFirstName() {
         return firstName;
@@ -30,11 +30,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Integer getYearsOfWorkExperience() {
-        return yearsOfWorkExperience;
+    public int getYearOfEmployment() {
+        return yearOfEmployment;
     }
 
-    public void setYearsOfWorkExperience(Integer yearsOfWorkExperience) {
-        this.yearsOfWorkExperience = yearsOfWorkExperience;
+    public void setYearOfEmployment(int yearOfEmployment) {
+        this.yearOfEmployment = yearOfEmployment;
     }
 }

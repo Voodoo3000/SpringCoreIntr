@@ -14,13 +14,16 @@ public class PositionService {
     public PositionService(PositionList positionList) {
         this.positionList = positionList;
     }
-
+    /*
+    * Checks if requested position is available, if yes then set it to employee
+    */
     public Employee setAvailablePosition(Employee employee, Position position) {
-        System.out.println(positionList.getPositions().size());
         if (positionList.getPositions().contains(position)) {
             employee.setPosition(position);
             LOGGER.info(position.toString() + " was assigned to new employee " + employee.getFirstName());
         } else LOGGER.info(position + " is occupied");
         return employee;
     }
+
+
 }

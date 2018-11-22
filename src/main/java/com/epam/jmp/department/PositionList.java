@@ -1,12 +1,14 @@
 package com.epam.jmp.department;
 
 import com.epam.jmp.entity.Position;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class PositionList {
+    private static final Logger LOGGER = Logger.getLogger(PositionList.class);
     private List<Position> positions = new ArrayList<>();
 
     public PositionList() {
@@ -31,5 +33,6 @@ public class PositionList {
 
     public void addPosition(Position position) {
         this.positions.add(position);
+        LOGGER.info("Position " + position + " is available");
     }
 }

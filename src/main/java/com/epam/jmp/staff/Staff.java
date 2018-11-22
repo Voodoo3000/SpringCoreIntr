@@ -5,7 +5,6 @@ import com.epam.jmp.entity.Employee;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Staff {
@@ -25,15 +24,20 @@ public class Staff {
         this.positionList = positionList;
     }
 
+    /*
+    * Adds employee to the list of employees and
+    * remove occupied position from list of available positions
+    */
     public void addToEmployees(Employee employee){
         this.employees.add(employee);
         this.positionList.removePosition(employee.getPosition());
-        for (Employee e : employees) {
-            System.out.println(e.getFirstName());
-        }
     }
 
-    public void removeFromEmployees(String firstName) {
+    /*
+    * Removes employee from list of employee and
+    * gets back free position to list of available positions
+    */
+    public void removeFromStaff(String firstName) {
         for (Employee e : this.employees) {
             if(e.getFirstName().equals(firstName)) {
                 this.positionList.addPosition(e.getPosition());
