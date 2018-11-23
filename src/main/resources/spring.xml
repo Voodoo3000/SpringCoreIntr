@@ -26,5 +26,8 @@
 
     <bean id="salaryService" class="com.epam.jmp.service.SalaryService" scope="singleton" autowire="byName"/>
 
-    <bean id="randomYear" class="com.epam.jmp.util.RandomYear" scope="singleton"/>
+    <bean id="randomYear" class="com.epam.jmp.util.RandomYear" scope="singleton">
+        <property name="startPeriod" value="#{2013}"/>
+        <property name="endPeriod" value="#{2018}"/>
+    </bean>
 </beans>
