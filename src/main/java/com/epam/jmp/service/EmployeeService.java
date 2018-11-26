@@ -7,11 +7,7 @@ import com.epam.jmp.dataCollections.Staff;
 import com.epam.jmp.util.RandomYear;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
-@Component
-@Scope("singleton")
 public class EmployeeService {
     private static final Logger LOGGER = Logger.getLogger(EmployeeService.class);
     @Autowired

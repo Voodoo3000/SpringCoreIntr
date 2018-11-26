@@ -1,17 +1,14 @@
 package com.epam.jmp;
 
+import com.epam.jmp.config.AppConfig;
 import com.epam.jmp.entity.Position;
 import com.epam.jmp.service.EmployeeService;
 import com.epam.jmp.service.SalaryService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
-@ComponentScan("com.epam.jmp")
 public class App {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(App.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
         /*
          * Employee hire service initiating
          */

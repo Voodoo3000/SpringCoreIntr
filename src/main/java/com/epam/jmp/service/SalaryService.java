@@ -7,13 +7,9 @@ import com.epam.jmp.dataCollections.SalarySheet;
 import com.epam.jmp.dataCollections.Staff;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import java.util.Calendar;
 
-@Component
-@Scope("singleton")
 public class SalaryService {
     private static final Logger LOGGER = Logger.getLogger(SalaryService.class);
     private static final int percentOfSalaryIncreasing = 20;
