@@ -1,12 +1,16 @@
-package com.epam.jmp.department;
+package com.epam.jmp.dataCollections;
 
 import com.epam.jmp.entity.Position;
 import org.apache.log4j.Logger;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Component
+@Scope("singleton")
 public class PositionList {
     private static final Logger LOGGER = Logger.getLogger(PositionList.class);
     private List<Position> positions = new ArrayList<>();

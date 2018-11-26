@@ -1,27 +1,24 @@
-package com.epam.jmp.staff;
+package com.epam.jmp.dataCollections;
 
-import com.epam.jmp.department.PositionList;
 import com.epam.jmp.entity.Employee;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
+@Scope("singleton")
 public class Staff {
     private static final Logger LOGGER = Logger.getLogger(Staff.class);
     private List<Employee> employees = new ArrayList<>();
+    @Autowired
     private PositionList positionList;
 
     public List<Employee> getEmployees() {
         return employees;
-    }
-
-    public PositionList getPositionList() {
-        return positionList;
-    }
-
-    public void setPositionList(PositionList positionList) {
-        this.positionList = positionList;
     }
 
     /*
@@ -31,6 +28,7 @@ public class Staff {
     public void addToEmployees(Employee employee){
         this.employees.add(employee);
         this.positionList.removePosition(employee.getPosition());
+        LOGGER.info("\n" + "The employee " + employee.getFirstName() + " was admitted in " + employee.getYearOfEmployment() + " year");
     }
 
     /*
@@ -41,6 +39,7 @@ public class Staff {
         for (Employee e : this.employees) {
             if(e.getFirstName().equals(firstName)) {
                 this.positionList.addPosition(e.getPosition());
+                LOGGER.info("Employee " + firstName + " was fired");
             }
         }
         employees.removeIf(employee -> employee.getFirstName().equals(firstName));

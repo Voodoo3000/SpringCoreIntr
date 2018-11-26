@@ -1,9 +1,14 @@
 package com.epam.jmp.util;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("singleton")
 public class RandomYear {
     private int year;
-    private int startPeriod;
-    private int endPeriod;
+    private int startPeriod = 2013;
+    private int endPeriod = 2018;
 
     public int getYear() {
         year = randBetween(startPeriod, endPeriod);

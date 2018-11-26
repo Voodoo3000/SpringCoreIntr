@@ -3,13 +3,15 @@ package com.epam.jmp;
 import com.epam.jmp.entity.Position;
 import com.epam.jmp.service.EmployeeService;
 import com.epam.jmp.service.SalaryService;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-
+@Configuration
+@ComponentScan("com.epam.jmp")
 public class App {
     public static void main(String[] args) {
-        ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(App.class);
         /*
          * Employee hire service initiating
          */

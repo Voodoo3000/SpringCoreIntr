@@ -1,19 +1,21 @@
-package com.epam.jmp.salarySheet;
+package com.epam.jmp.dataCollections;
 
 import com.epam.jmp.entity.Position;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiConsumer;
 
+@Component
+@Scope("singleton")
 public class SalarySheet {
-
     private Map<Position, Integer> salaryToPositionMap = new HashMap<>();
 
     public SalarySheet() {
         fillSalaryAndPositionSheet();
     }
-
     public Map<Position, Integer> getSalaryToPositionMap() {
         return salaryToPositionMap;
     }
@@ -21,7 +23,6 @@ public class SalarySheet {
     public void setSalaryToPositionMap(Map<Position, Integer> salaryToPositionMap) {
         this.salaryToPositionMap = salaryToPositionMap;
     }
-
     private void fillSalaryAndPositionSheet() {
         BiConsumer<Position, Integer> con = salaryToPositionMap::put;
         con.accept(Position.TESTING_ENGINEER, 900);
