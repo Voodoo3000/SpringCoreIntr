@@ -16,6 +16,7 @@ public class SalarySheet {
     public SalarySheet() {
         fillSalaryAndPositionSheet();
     }
+
     public Map<Position, Integer> getSalaryToPositionMap() {
         return salaryToPositionMap;
     }
@@ -23,6 +24,7 @@ public class SalarySheet {
     public void setSalaryToPositionMap(Map<Position, Integer> salaryToPositionMap) {
         this.salaryToPositionMap = salaryToPositionMap;
     }
+
     private void fillSalaryAndPositionSheet() {
         BiConsumer<Position, Integer> con = salaryToPositionMap::put;
         con.accept(Position.TESTING_ENGINEER, 900);

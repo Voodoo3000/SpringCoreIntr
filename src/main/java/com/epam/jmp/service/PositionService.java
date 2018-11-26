@@ -1,7 +1,7 @@
 package com.epam.jmp.service;
 
 import com.epam.jmp.dataCollections.PositionList;
-import com.epam.jmp.entity.Employee;
+
 import com.epam.jmp.entity.Position;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
