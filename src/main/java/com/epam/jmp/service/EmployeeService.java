@@ -28,9 +28,8 @@ public class EmployeeService {
     * requested position will be available and requested salary will be suitable.
     */
     public void hireEmployee(String firstName, Position position, int salarySize) {
-        ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
-        Employee employee = ctx.getBean(Employee.class);
-        Salary salary = ctx.getBean(Salary.class);
+        Employee employee = new Employee();
+        Salary salary = new Salary();
         employee.setFirstName(firstName);
         salary.setSize(salarySize);
         employee = positionService.setAvailablePosition(employee, position);

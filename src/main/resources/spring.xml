@@ -5,12 +5,6 @@
  		http://www.springframework.org/schema/beans
  		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <bean id="employee" class="com.epam.jmp.entity.Employee" scope="prototype"/>
-
-    <bean id="position" class="com.epam.jmp.entity.Position" scope="prototype"/>
-
-    <bean id="salary" class="com.epam.jmp.entity.Salary" scope="prototype"/>
-
     <import resource="lists.xml"/>
 
     <bean id="employeeService" class="com.epam.jmp.service.EmployeeService" scope="singleton" autowire="byName">
