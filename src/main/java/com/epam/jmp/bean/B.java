@@ -1,6 +1,9 @@
 package com.epam.jmp.bean;
 
+import org.apache.log4j.Logger;
+
 public class B {
+    private static final Logger LOGGER = Logger.getLogger(B.class);
     private A aClass;
 
     public B(A aClass) {
@@ -16,6 +19,6 @@ public class B {
     }
 
     public void methodForEClass() {
-        System.out.println("Hello from B class!");
+        LOGGER.info("Hello from B class!");
     }
 }
