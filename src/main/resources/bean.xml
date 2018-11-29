@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="value.properties"/>
+
+    <bean id="aClass" class="com.epam.jmp.bean.A">
+        <property name="number" value="${value.number}"/>
+        <property name="word" value="${value.word}"/>
+    </bean>
+
+    <bean id="bClass" class="com.epam.jmp.bean.B">
+        <constructor-arg ref="aClass"/>
+        <replaced-method replacer="eClass" name="methodForEClass"/>
+    </bean>
+
+    <bean id="cClass" class="com.epam.jmp.bean.C" scope="singleton">
+        <lookup-method bean="dClass" name="getdClass"/>
+    </bean>
+
+    <bean id="dClass" class="com.epam.jmp.bean.D" scope="prototype"/>
+
+    <bean id="eClass" class="com.epam.jmp.bean.E" autowire="byName"/>
+
+    <bean id="fClass" class="com.epam.jmp.bean.F" init-method="init" destroy-method="close"/>
+</beans>
